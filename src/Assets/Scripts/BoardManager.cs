@@ -78,11 +78,11 @@ public class BoardManager : MonoBehaviour {
     InitializeList();
     int enemyCount = (int)Mathf.Log(level, 2f);
     LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
+    LayoutObjectAtRandom(foodTiles, 1, 4);
     Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
-    Debug.Log("move camera to " + columns / 2f + " " + rows / 2f);
     camera.transform.position = new Vector3(columns / 2f, rows / 2f, -10f);
 
-    Instantiate(player, new Vector3(columns / 2f, 6, 0f), Quaternion.identity);
+    Instantiate(player, new Vector3(columns / 2f, -1, 0f), Quaternion.identity);
   }
 
   // Use this for initialization

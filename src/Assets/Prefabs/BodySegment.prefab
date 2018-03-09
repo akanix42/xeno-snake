@@ -19,10 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4526645034536548}
-  - component: {fileID: 61797971219046790}
   - component: {fileID: 212060903277513280}
   - component: {fileID: 114293674130207894}
+  - component: {fileID: 114102675573065992}
+  - component: {fileID: 114942196881876312}
   - component: {fileID: 114232188548988480}
+  - component: {fileID: 61797971219046790}
   - component: {fileID: 50789999991311656}
   m_Layer: 8
   m_Name: BodySegment
@@ -73,7 +75,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -89,6 +91,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114102675573065992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630920332469686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f625dc67edd024ab5582f393d10c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114232188548988480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,10 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753b19d1ee83654499905bb0b09a5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.1
+  smoothMovementSpritePrefab: {fileID: 1038260332492108, guid: 4e12d30b920b8fb4b8aaefd9a4cb0f6e,
+    type: 2}
+  moveTime: 0.2
   blockingLayer:
     serializedVersion: 2
     m_Bits: 0
+  showSpriteWhileMoving: 1
 --- !u!114 &114293674130207894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +129,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65a1cd47bf5f0394fa6ddddf98bd31c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114942196881876312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630920332469686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711c1d59f6c95b145950b631b68f147a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212060903277513280
@@ -148,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 588539999
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: a898e8aad0c68c747991eb85d391b385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

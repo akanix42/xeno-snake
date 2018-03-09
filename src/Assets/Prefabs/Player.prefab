@@ -24,6 +24,9 @@ GameObject:
   - component: {fileID: 50223163127195582}
   - component: {fileID: 212927836531132376}
   - component: {fileID: 114917328904496190}
+  - component: {fileID: 114662238078288102}
+  - component: {fileID: 114409139139994328}
+  - component: {fileID: 114051337115684756}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -89,6 +92,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114051337115684756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762849755041794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4845dec55aebc864b8f2b0d4c5f8c05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114409139139994328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762849755041794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711c1d59f6c95b145950b631b68f147a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114662238078288102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762849755041794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f625dc67edd024ab5582f393d10c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114879437780214908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,10 +136,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c50127ca191cfc4c829cadc14b49362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.1
+  smoothMovementSpritePrefab: {fileID: 1038260332492108, guid: 4e12d30b920b8fb4b8aaefd9a4cb0f6e,
+    type: 2}
+  moveTime: 0.2
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  showSpriteWhileMoving: 1
   headSprite: {fileID: 21300000, guid: a898e8aad0c68c747991eb85d391b385, type: 3}
   bodySprite: {fileID: 21300002, guid: a898e8aad0c68c747991eb85d391b385, type: 3}
   tailSprite: {fileID: 21300004, guid: a898e8aad0c68c747991eb85d391b385, type: 3}
@@ -121,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a1cd47bf5f0394fa6ddddf98bd31c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
 --- !u!212 &212927836531132376
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 588539999
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a898e8aad0c68c747991eb85d391b385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
