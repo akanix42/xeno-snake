@@ -22,8 +22,8 @@ public abstract class MovingObject : MonoBehaviour {
   //    smoothMovementSprite.GetComponent<SpriteRenderer>().enabled = value;
   //  }
   //}
-  private GameObject smoothMovementSprite;
-  private SpriteRenderer smoothMovementSpriteRenderer;
+  protected GameObject smoothMovementSprite;
+  protected SpriteRenderer smoothMovementSpriteRenderer;
   // Use this for initialization
   protected virtual void Awake() {
     boxCollider = GetComponent<BoxCollider2D>();

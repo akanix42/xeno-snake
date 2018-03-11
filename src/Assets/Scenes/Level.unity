@@ -208,11 +208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 8
   rows: 8
+  foodRemaining: 0
   foodCount:
     minimum: 0
     maximum: 10
   camera: {fileID: 1398285318}
-  exit: {fileID: 1365400812999104, guid: 237dcf8a7226fe04abe848404afcad3e, type: 2}
+  exitPrefab: {fileID: 1365400812999104, guid: 237dcf8a7226fe04abe848404afcad3e, type: 2}
   player: {fileID: 1762849755041794, guid: ea58477beecfa0f4aa20c18154c09867, type: 2}
   enemyTiles: []
   floorTiles:
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63db2cbe96538b49985bae5d1f37448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardScript: {fileID: 0}
+  boardManager: {fileID: 0}
 --- !u!4 &799596011
 Transform:
   m_ObjectHideFlags: 0

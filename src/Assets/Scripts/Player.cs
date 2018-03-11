@@ -14,7 +14,7 @@ public class Player : MovingObject {
   private int bodyLength = 2;
   private bool isStarted = false;
   private bool isAttemptingMove = false;
-  private bool isParalyzed = false;
+  public bool isParalyzed = false;
   private Vector2 inputVector = new Vector2(0, 1f);
   private Vector2 currentVector = new Vector2(0, 1f);
   private List<GameObject> body = new List<GameObject>();
@@ -46,7 +46,9 @@ public class Player : MovingObject {
       return;
     }
 
-    var newInputVector = new Vector2Int(System.Math.Sign(Input.GetAxis("Horizontal")), System.Math.Sign(Input.GetAxis("Vertical")));
+    var newInputVector = isParalyzed 
+      ? inputVector 
+      : new Vector2Int(System.Math.Sign(Input.GetAxis("Horizontal")), System.Math.Sign(Input.GetAxis("Vertical")));
     var nextInputVector = newInputVector;
 
     if (newInputVector.y != 0 && nextInputVector.x != 0) {
@@ -71,9 +73,9 @@ public class Player : MovingObject {
   }
 
   protected override void AttemptMove<T>(int xDir, int yDir) {
-    if (isParalyzed) {
-      return;
-    }
+    //if (isParalyzed) {
+      //return;
+    //}
     isAttemptingMove = true;
     GetComponent<CurrentDirection>().SetDirection(xDir, yDir);
     base.AttemptMove<T>(xDir, yDir);
@@ -141,15 +143,17 @@ public class Player : MovingObject {
     tailSegment.GetComponent<SpriteRenderer>().sprite = tailSprite;
     tailSegment.GetComponent<SpriteRenderer>().sortingOrder++;
     tailSegment.GetComponent<BodySegment>().showSpriteWhileMoving = false;
+    tailSegment.AddComponent<TailSegmentComponent>();
+    tailSegment.AddComponent<PlayerComponent>();
     body.Add(tailSegment);
   }
 
   protected override void OnCantMove<T>(T component) {
-    if (component.tag == "wall") {
-      isParalyzed = true;
-      // TODO remove body segment
-      // TODO disable movement
-    }
+    //if (component.tag == "wall") {
+    //  isParalyzed = true;
+    //  // TODO remove body segment
+    //  // TODO disable movement
+    //}
   }
 
 }

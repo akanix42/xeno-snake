@@ -14,6 +14,12 @@ public class BodySegment : MovingObject {
     StartCoroutine(SmoothMovement(newPosition));
   }
 
+  public void Hide() {
+    GetComponent<SpriteRenderer>().enabled = false;
+    smoothMovementSpriteRenderer.enabled = false;
+    showSpriteWhileMoving = false;
+
+  }
   protected override void OnCantMove<T>(T component) {
     
   }
